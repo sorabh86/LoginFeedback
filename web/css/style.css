@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{background:#f1f1f1;font-family:monospace;font-size:15px;}
+html,body{background:#f1f1f1;font-family:monospace;font-size:15px;height:100%}
 .fullheight {height:100%}
 /*body{background:#eee;font-family:sans-serif}*/
 h1,h2,h3,h4,h5,h6{margin-bottom: 15px;}

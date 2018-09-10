@@ -20,16 +20,25 @@
         </style>
     </head>
     <body>
-        <%@include file="templates/navigation.html" %>
+        <header>
+            <h1 class="brand"><a href="/MCS051LoginQ6/site">Feedback HUB</a></h1>
+        <!--    <nav>
+                <ul>
+                    <li><a href="/MCS051LoginQ6/site">Home</a></li>
+                    <li><a href="/MCS051LoginQ6/site?action=products">Products</a></li>
+                    <li><a href="/MCS051LoginQ6/site?action=login">login</a></li>
+                </ul>
+            </nav>-->
+        </header>
         <form action="/LoginFeedback/site" method="post">
             <h1>Login</h1>
             <input type="hidden" name="action" value="dologin">
             <% if(session.getAttribute("error") != null) { %>
-                <h6 class="error"><%= request.getAttribute("error") %></h6>
-            <% } %>
+                <h6 class="error"><%= session.getAttribute("error") %></h6>
+                <% } session.setAttribute("error", null); %>
             <div class="form-group">
                 <label>Customer ID : </label> 
-                <input type="text" name="email" value="<%= request.getAttribute("email") %>">
+                <input type="text" name="username" value="">
             </div>
             <div class="form-group">
                 <label>Password : </label>
