@@ -113,6 +113,7 @@ public class Site extends HttpServlet {
                     stmt.setString(2, message);
                     
                     stmt.executeQuery();
+                    stmt.close();
                     
                     session.setAttribute("success", "Your feedback is submited.");
                     response.sendRedirect("/LoginFeedback/feedback.jsp");
@@ -120,7 +121,9 @@ public class Site extends HttpServlet {
                 } catch (SQLException ex) {
                     session.setAttribute("error", "Error on submiting, try again later.");
                     response.sendRedirect("/LoginFeedback/feedback.jsp");
-                }                
+                }
+                
+                DBConnect.disconnect();
             } else {
                 session.setAttribute("error", "Problem Connecting to Database.");
                 response.sendRedirect("/LoginFeedback/feedback.jsp");
